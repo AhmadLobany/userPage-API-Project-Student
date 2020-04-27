@@ -1,20 +1,22 @@
 let manager = new APIManager;
 let renderer = new Renderer();
-
- manager.loadData();
- let data = manager.getData();
-
-renderer.render(data)
+let data;
 
 
 $('#load-but').on('click', function () {
-    manager.loadData();
+    for(let i=0;i<6;i++) manager.addFriend();
+    manager.setUserinfo();
+    manager.setQuote();
+    manager.setMeatDescr();
+    manager.setPokemon();
+    manager.removeFriends();
     data = manager.getData();
 })
 
 
 $('#display-but').on('click', function () {
-    renderer.render(data);
+     data = manager.getData();
+     renderer.render(data);
 })
 
 $('#save-user-but').on('click', function () {
