@@ -1,7 +1,9 @@
 class APIManager {
     constructor() {
         this.data = {};
+        this.data.friends = [];
     }
+
 
     loadData() {
 
@@ -55,21 +57,22 @@ class APIManager {
         });
 
 
-
         for (let i = 0; i < 6; i++) //load 6 friends
             $.ajax({
                 type: 'GET',
                 async: false,
                 url: `https://randomuser.me/api/`,
                 success: function (data) {
-                    self.data[`friend${i + 1}`] = data.results[0].name.first + " "
-                        + data.results[0].name.last;
+                   let friend = {name : data.results[0].name.first + " "
+                        + data.results[0].name.last };
+                    self.data.friends.push(friend);
                 }
             });
+            
+    }
 
-
+    getData () {
         return this.data;
-        
     }
 
 }

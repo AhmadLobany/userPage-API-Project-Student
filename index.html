@@ -35,12 +35,9 @@
 
     <script id="friends-template" type="text/x-handlebars-template">
         <ul>
-            <li>{{friend1}}</li><br>
-            <li>{{friend2}}</li><br>
-            <li>{{friend3}}</li><br>
-            <li>{{friend4}}</li><br>
-            <li>{{friend5}}</li><br>
-            <li>{{friend6}}</li><br>
+            {{#each friends}}
+            <li>{{name}}</li><br>
+            {{/each}}
         </ul>
     </script>
 

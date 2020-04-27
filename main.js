@@ -1,13 +1,15 @@
 let manager = new APIManager;
 let renderer = new Renderer();
 
-let data = manager.loadData();
+ manager.loadData();
+ let data = manager.getData();
 
 renderer.render(data)
 
 
 $('#load-but').on('click', function () {
-    data = manager.loadData();
+    manager.loadData();
+    data = manager.getData();
 })
 
 

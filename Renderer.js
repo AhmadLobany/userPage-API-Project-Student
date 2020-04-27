@@ -40,7 +40,7 @@ class Renderer {
         const source = $('#friends-template').html();
         const template = Handlebars.compile(source)
         $(".friends-container").empty();
-        const newHTML = template(this.data);
+        const newHTML = template({friends: this.data.friends});
         $('.friends-container').append(newHTML);
     }
 
