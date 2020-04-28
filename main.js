@@ -3,8 +3,9 @@ let renderer = new Renderer();
 let data;
 
 
+
 $('#load-but').on('click', function () {
-    for(let i=0;i<6;i++) manager.addFriend();
+    for (let i = 0; i < 6; i++) manager.addFriend();
     manager.setUserinfo();
     manager.setQuote();
     manager.setMeatDescr();
@@ -15,8 +16,8 @@ $('#load-but').on('click', function () {
 
 
 $('#display-but').on('click', function () {
-     data = manager.getData();
-     renderer.render(data);
+    data = manager.getData();
+    renderer.render(data);
 })
 
 $('#save-user-but').on('click', function () {

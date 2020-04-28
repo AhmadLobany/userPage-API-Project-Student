@@ -44,32 +44,32 @@ class APIManager {
 
     setPokemon() { //Load pokemon
         let randNum = Math.floor(Math.random() * 719) + 1;  // Random number 1-721 to pick pokemon randomly
-        $.ajax({ 
+        $.ajax({
             type: 'GET',
             url: `https://pokeapi.co/api/v2/pokemon/${randNum}/`,
-            success: (data)=> {
+            success: (data) => {
                 this.data.pokemonImage = data.sprites.front_default;
                 this.data.pokemonText = 'Favorite Pokemon:   ' + data.name;
             }
         });
     }
-     
-    removeFriends () {
+
+    removeFriends() {
         this.data.friends = [];
     }
 
-    addFriend() { 
-            $.ajax({
-                type: 'GET',
-                url: `https://randomuser.me/api/`,
-                success:  (data) => {
-                    let friend = {
-                        name: data.results[0].name.first + " "
-                            + data.results[0].name.last
-                    };
-                    this.data.friends.push(friend);
-                }
-            });
+    addFriend() {
+        $.ajax({
+            type: 'GET',
+            url: `https://randomuser.me/api/`,
+            success: (data) => {
+                const friend = {
+                    name: data.results[0].name.first + " "
+                        + data.results[0].name.last
+                };
+                this.data.friends.push(friend);
+            }
+        });
     }
 
 

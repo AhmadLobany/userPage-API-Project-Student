@@ -1,6 +1,5 @@
 class Renderer {
     constructor() {
-        this.data = {};
     }
 
     renderUserInfo() {
@@ -40,7 +39,7 @@ class Renderer {
         const source = $('#friends-template').html();
         const template = Handlebars.compile(source)
         $(".friends-container").empty();
-        const newHTML = template({friends: this.data.friends});
+        const newHTML = template({ friends: this.data.friends });
         $('.friends-container').append(newHTML);
     }
 
@@ -52,4 +51,5 @@ class Renderer {
         this.renderUserInfo();
         this.renderFriends();
     }
+
 }
