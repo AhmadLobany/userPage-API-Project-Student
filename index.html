@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API Project</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="user-container"></div>
+        <div class="quote-container"></div>
+        <div class="content-container">
+            <div class="pokemon-container"></div>
+            <div class="meat-container"></div>
+            <div class="buttons">
+                <button id='load-but'>Load User Data</button>
+                <button id='display-but'>Display User</button>
+                <button id='save-user-but'>Save User Page</button>
+                <button id='load-user-but'>Load User Page</button>
+            </div>
+        </div>
+        <div class="friends">
+            <h4>Friends</h4><br>
+            <div class="friends-container">
+            </div>
+        </div>
+    </div>
+
+    <script id="friends-template" type="text/x-handlebars-template">
+        <ul>
+            {{#each friends}}
+            <li>{{name}}</li><br>
+            {{/each}}
+        </ul>
+    </script>
+
+    <script id="user-template" type="text/x-handlebars-template">
+        <img id='profile-pic' src ={{image}}>
+        <div class='user-info'>
+            <p>{{name}}</p>
+            <p>{{location}}</p>
+        </div>
+    </script>
+
+    <script id="quote-template" type="text/x-handlebars-template">
+        <h1>Favorite quote:</h1>
+        <p>" {{quote}} " ~ Kanye</p>
+    </script>
+
+    <script id="pokemon-template" type="text/x-handlebars-template">
+        <img id='pokemon-image' src={{pokemonImage}}>
+        <p id='pokemon-text'> {{pokemonText}}</p>
+    </script>
+
+    <script id="meat-template" type="text/x-handlebars-template">
+        <p class="meat-text">About me:</p>
+        <p class="meat-text">{{meat}}</p>
+        <br>
+    </script>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
+        integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src='APIManager.js'></script>
+    <script src='Renderer.js'></script>
+    <script src='main.js'></script>
+</body>
+
+</html>
